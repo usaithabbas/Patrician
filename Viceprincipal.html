@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <h1>Vice Principal</h1>
+        <br><br>
+        
+      
+        <label for="">Audit Team</label>
+        <input type="text" id="Academic" name="Audit Team" placeholder="Academic"><br>
+        <br>
+        <label for="">Place Of Audit</label>
+        <input type="text" id="Auditor" name="Place Of Audit" placeholder="Name of the Auditor"><br>
+        <br>
+        <br>
+        <label for="">Unit Team </label>
+                    <input type="text" name="Unit Team">
+                    <br>
+                    <br>
+        <label for="">Date Of Audit</label>
+        <input type="date" name="Date" id="Date" placeholder="Date" ><br><br>
+     
+    
+      <label for="">Block</label>
+      <input type="text" name="Block">
+      <br>
+      <br>
+      <br><br>
+      <br><br>
+        <label for="">1.LED LIGHTS</label>
+        <input type="text" name="1.LED LIGHTS">
+        <br><br>
+        <label for="">2.ROLLING CHAIRS</label>
+        <input type="text" name="2.ROLLING CHAIRS">
+        <br><br>
+        <label for="">3.DESKTOP COMPUTER+PRINTERS</label>
+        <input type="text" name="3.DESKTOP COMPUTER+PRINTERS">
+        <br><br>
+        <label for="">4.UPS+CPU</label>
+        <input type="text" name="4.UPS+CPU">
+        <br><br>
+        <label for="">5.DUSTBIN</label>
+        <input type="text" name="5.DUSTBIN">
+        <br><br>
+        <label for="">6.FANS</label>
+        <input type="text" name="6.FANS">
+        <br><br>
+        <label for="">7.AC+REMOTE</label>
+        <input type="text" name="7.AC+REMOTE">
+        <br><br>
+        <label for="">8.BIO-METRIC</label>
+        <input type="text" name="8.BIO-METRIC">
+        <br><br>
+        <label for="">9.NOTICE BOARD </label>
+        <input type="text" name="9.NOTICE BOARD">
+        <br><br>
+        <label for="">10.FOCUS LIGHT</label>
+        <input type="text" name="10.FOCUS LIGHT">
+        <br><br>
+        <label for="">11.PUBLIC ADDRESSING SPEAKER</label>
+        <input type="text" name="11.PUBLIC ADDRESSING SPEAKER">
+        <br><br>
+        <label for="">12.AUTOMATED BELL TIMER</label>
+        <input type="text" name="12.AUTOMATED BELL TIMER">
+        <br><br>
+        <label for="">13.CALLING BELL</label>
+        <input type="text" name="13.CALLING BELL">
+        <br><br>
+        <label for="">14.STEEL CHAIRS(3 SEATER)</label>
+        <input type="text" name="14.STEEL CHAIRS(3 SEATER)">
+        <br><br>
+        <label for="">15.INTERCOMM</label>
+        <input type="text" name="15.INTERCOMM">
+        <br><br>
+        <label for="">16.MARY PHOTO(BIG)</label>
+        <input type="text" name="16.MARY PHOTO(BIG)">
+        <br><br>
+        <label for="">17.JESUS PHOTO</label>
+        <input type="text" name="17.JESUS PHOTO">
+        <br><br>
+        <label for="">18.WALL CLOCK</label>
+        <input type="text" name="18.WALL CLOCK">
+        <br><br>
+        <label for="">19.CCTV</label>
+        <input type="text" name="19.CCTV">
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzCxpwK6jCxgI0ejW1DsvZOmsXNFau2RTEPUvtqKJqU1hi1ojFm5yYNkNp5Z0X-6guH6w/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

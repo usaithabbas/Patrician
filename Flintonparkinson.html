@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <h1>FLINTON PARKINSON HALL</h1>
+        <br><br>
+        <label for="">Audit Team</label>
+    <input type="text" id="Academic" name="Audit Team" placeholder="Academic"><br>
+    <br>
+    <label for="">Place Of Audit</label>
+    <input type="text" id="Auditor" name="Place Of Audit" placeholder="Name of the Auditor"><br>
+    <br>
+    <br>
+    <label for="">Unit Team </label>
+                <input type="text" name="Unit Team">
+                <br>
+                <br>
+    <label for="">Date Of Audit</label>
+    <input type="date" name="Date" id="Date" placeholder="Date" ><br><br>
+ 
+
+  <label for="">Block</label>
+  <input type="text" name="Block">
+  <br>
+  <br>
+  <br><br>
+        <h2>
+        <label for="">FLINTON PARKINSON HALL</label></h2>
+        <input type="text" name="FLINTON PARKINSON HALL" value="FLINTON PARKINSON HALL">
+        <br>
+        <br>
+        <label for="">1. Wall Fans</label>
+        <input type="text" name="1. Wall Fans">
+        <br>
+        <br>
+        <label for="">2. Wall Speakers</label>
+        <input type="text" name="2. Wall Speakers">
+        <br>
+
+        <br>
+        <label for="">3. Epson Projector</label>
+        <input type="text" name="3. Epson Projector">
+        <br>
+        <br>
+        <label for="">4. Screen</label>
+        <input type="text" name="4. Screen">
+        <br>
+        <br>
+        <label for="">5.Ahuja Amplifier</label>
+        <input type="text" name="5.AhujaAmplifier">
+        <br>
+        <br>
+        <label for="">6. Cordless Microphone (All-in-One =&gt; 2nos)</label>
+        <input type="text" name="6. Cordless Microphone (All-in-One =&gt; 2nos)">
+        <br>
+        <br>
+        <label for="">7. Podium</label>
+        <input type="text" name="7. Podium">
+        <br>
+        <br>
+        <label for="">8. Armless Chairs</label>
+        <input type="text" name="8. Armless Chairs">
+        <br>
+        <br>
+        <label for="">9. CCTV</label>
+        <input type="text" name="9. CCTV">
+        <br>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvct_6pI6s_78ovQbNxtR7Ai83Pw4UJiWykGtSTIjnBPSVmSc4r9GB8ayVAnBVMYCF/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

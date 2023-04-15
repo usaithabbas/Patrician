@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Office</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <h1>Finance Office</h1>
+        <br><br>
+        <label for="">1.Students</label>
+        <input type="text" name="Students">
+        <br><br>
+        <label for="">A.Fees Collection</label>
+        <input type="text" name="1. Fees Collection">
+        <br><br>
+        <label for="">B.Sponsors</label>
+        <input type="text" name="2. Sponsors">
+        <br><br>
+        <label for="">2.Faculty profile Salary Register / PF</label>
+        <input type="text" name="Faculty profile Salary Register / PF">
+        <br><br>
+        <label for="">3.Statutory Audit requirements</label>
+        <input type="text" name="Statutory Audit requirements">
+        <br><br>
+        <label for="">4.List of Other Files and Registers Maintained</label>
+        <input type="text" name="List of Other Files and Registers Maintained">
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7ae9egvSRv7d5OjI7htn7YbtLipTHHCTB0LiPlIzJM0kHLbQNaw9mCN5gO_WTo4cc/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

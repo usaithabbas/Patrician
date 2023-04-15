@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Room</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <h1>Classroom Page</h1>
+        <br><br>
+        <label for="">Audit Team</label>
+    <input type="text" id="Academic" name="Audit Team" placeholder="Academic"><br>
+    <br>
+    <label for="">Place Of Audit</label>
+    <input type="text" id="Auditor" name="Place Of Audit" placeholder="Name of the Auditor"><br>
+    <br>
+    <br>
+    <label for="">Unit Team </label>
+                <input type="text" name="Unit Team">
+                <br>
+                <br>
+    <label for="">Date Of Audit</label>
+    <input type="date" name="Date" id="Date" placeholder="Date" ><br><br>
+ 
+
+  <label for="">Block</label>
+  <input type="text" name="Block">
+  <br>
+  <br>
+  <br><br>
+        
+            <br><br>
+        <label for="">1.Student Desk</label>
+        <input type="text" name="Student Desk">
+        <br>
+        <br>
+        <label for="">2.Remark First </label>
+        <input type="text" name="Remark First ">
+        <br>
+        <br>
+        <label for="">3.Student Bench</label>
+        <input type="text" name="Student Bench ">
+        <br>
+        <br>
+        <label for="">4.Tube Light With Chock And Patti </label>
+        <input type="text" name="Tube Light With Chock And Patti ">
+        <br>
+        <br>
+        <label for="">5.Public Announcement Speaker </label>
+        <input type="text" name="Public Announcement Speaker ">
+        <br>
+        <br>
+        <label for="">6.Teacher Desk </label>
+        <input type="text" name="Teacher Desk ">
+        <br>
+        <br>
+        <label for="">7.Teacher Chair Molded Plastic Chair </label>
+        <input type="text" name="Teacher Chair Molded Plastic Chair ">
+        <br>
+        <br>
+        <label for="">8.Multi Media Projector Donglecable And Remote </label>
+        <input type="text" name="Multi Media Projector Donglecable And Remote">
+        <br>
+        <br>
+        <label for="">9.Smart Board </label>
+        <input type="text" name="Smart Board ">
+        <br>
+        <br>
+        <label for="">10.Dustbin </label>
+        <input type="text" name="Dustbin ">
+        <br>
+        <br>
+        <label for="">11.Secret Heart Jesus Photo Wall Hanging </label>
+        <input type="text" name="Secret Heart Jesus Photo Wall Hanging ">
+        <br>
+        <br>
+        <label for="">12.Faculty Standing Floor Elevation Near Black Board </label>
+        <input type="text" name="Faculty Standing Floor Elevation Near Black Board ">
+        <br>
+        <br>
+        <label for="">13.Student Cupboard </label>
+        <input type="text" name="Student Cupboard ">
+        <br>
+        <br>
+        <label for="">Overall Remarks</label>
+        <input type="text" name="Overall Remarks">
+        <input type="submit" name="" value="Submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZjwo-bH3YH_WEgUv_dG53wXU4UQBIw-bO4CFhQenBLzuwTzuYzYUhJO1gbftFFkUJ/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

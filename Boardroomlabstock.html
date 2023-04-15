@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Room Stock</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        
+        <h1>BOARD ROOM STOCK</h1>
+        <br>
+        <br>
+        <label for="">Audit Team</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+    <input type="text" id="Academic" name="Audit Team" placeholder="Academic"><br>
+    <br>
+    <label for="">Place Of Audit</label>
+    <input type="text" id="Auditor" name="Place Of Audit" placeholder="Name of the Auditor"><br>
+    <br>
+    <br>
+    <label for="">Unit Team </label>
+                <input type="text" name="Unit Team">
+                <br>
+                <br>
+    <label for="">Date Of Audit</label>
+    <input type="date" name="Date" id="Date" placeholder="Date" ><br><br>
+ 
+
+  <label for="">Block</label>
+  <input type="text" name="Block">
+  <br>
+  <br>
+  <br><br>
+        <h2>
+        <label for="">BOARD ROOM</label></h2>
+        <input type="text" name="BOARD ROOM" value="BOARD ROOM">
+        <br>
+
+        <br>
+        <label for="">1. Ahuja Amplifier</label>
+        <input type="text" name="1. Ahuja Amplifier">
+        <br>
+        <br>
+        <label for="">2. Cordless Microphone</label>
+        <input type="text" name="2. Cordless Microphone">
+        <br>
+        <br>
+        <label for="">3. Epson Projector</label>
+        <input type="text" name="3. Epson Projector">
+        <br>
+        <br>
+        <label for="">4. Executive Cushion Chairs</label>
+        <input type="text" name="4. Executive Cushion Chairs">
+        <br>
+        <br>
+        <label for="">5. Panasonic A/C</label>
+        <input type="text" name="5. Panasonic A/C">
+        <br>
+        <br>
+        <label for="">6. Blue star A/C</label>
+        <input type="text" name="6. Blue star A/C">
+        <br>
+        <br>
+        <label for="">7. Wall Speakers</label>
+        <input type="text" name="7. Wall Speakers">
+        <br>
+        <br>
+        <label for="">8. Wood Sofa Set of 3</label>
+        <input type="text" name="8. Wood Sofa Set of 3">
+        <br>
+
+        <br>
+        <label for="">9. Teapoy Small</label>
+        <input type="text" name="9. Teapoy Small">
+        <br>
+        <br>
+        <label for="">10. TeaPoy Big</label>
+        <input type="text" name="10. TeaPoy Big">
+        <br>
+        <br>
+        <label for="">11. Telephone Intercom</label>
+        <input type="text" name="11. Telephone Intercom">
+        <br>
+        <br>
+        <label for="">12. Flower vase</label>
+        <input type="text" name="12. Flower vase">
+        <br>
+        <br>
+        <label for="">13. Wall Fans</label>
+        <input type="text" name="13. Wall Fans">
+        <br>
+        <br>
+        <label for="">14. LED LIGHT 22 watts</label>
+        <input type="text" name="14. LED LIGHT 22 watts">
+        <br>
+        <br>
+        <label for="">15. LED LIGHT 4 watts</label>
+        <input type="text" name="15. LED LIGHT 4 watts">
+        <br>
+        <br>
+        <label for="">16. LED LIGHT 1 watts</label>
+        <input type="text" name="16. LED LIGHT 1 watts">
+        <br>
+        <br>
+        <label for="">17. Clock</label>
+        <input type="text" name="17. Clock">
+        <br>
+        <br>
+        <label for="">18. Dustbin</label>
+        <input type="text" name="18. Dustbin">
+        <br>
+        <br>
+        <label for="">19. Fixed drawer</label>
+        <input type="text" name="19. Fixed drawer">
+        <br>
+        <br>
+        <label for="">20. Fixed cupboard</label>
+        <input type="text" name="20. Fixed cupboard">
+        <br>
+        <br>
+        <label for="">21. PA</label>
+        <input type="text" name="21. PA">
+        <br>
+        <br>
+        <label for="">22. Blinds</label>
+        <input type="text" name="22. Blinds">
+        <br>
+        <br>
+        <label for="">23. CCTV</label>
+        <input type="text" name="23. CCTV">
+        <br>
+        <br>
+        <label for="">24. Computer table 3 in 1</label>
+        <input type="text" name="24. Computer table">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyvct_6pI6s_78ovQbNxtR7Ai83Pw4UJiWykGtSTIjnBPSVmSc4r9GB8ayVAnBVMYCF/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

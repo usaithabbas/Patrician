@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Room</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        
+
+        <Center><H1>REST ROOM</H1></Center>
+
+        
+        <br><br><br><br>
+
+        <label for="">AUDIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="AUDIT TEAM">
+        <br><br>
+        <label for="">PLACE OF AUDIT</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="PLACE OF AUDIT">
+        <br><br>
+        <label for="">UNIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="UNIT TEAM">
+        <br><br>
+        <label for="">DATE</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="DATE">
+        <br><br>
+        <label for="">BLOCK</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="BLOCK">
+        <br><br>
+        <label for="">Floor</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="Floor">
+        <br><br>
+        <label for="">Men/Women</label>
+        &nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="Men/Women">
+        <br><br>
+        
+<hr>
+<br>
+        <label for="">DUSTBIN</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="DUSTBIN">
+        <input type="text" name="remark_DUSTBIN">
+
+        <br><br>
+
+        <label for="">BUCKET</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="BUCKET">
+        <input type="text" name="remark_BUCKET">
+
+        <br><br>
+
+        <label for="">MUG</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="MUG">
+        <input type="text" name="remark_MUG">
+
+        <br><br>
+
+        <label for="">TUBE LIGHT</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="TUBE LIGHT">
+        <input type="text" name="remark_TUBE LIGHT">
+
+        <br><br>
+
+        <label for="">LED LIGHT</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="LED LIGHT">
+        <input type="text" name="remark_LED LIGHT">
+
+        <br><br>
+
+        Others
+        <br>
+        <input type="text" name="Others">
+        <input type="text" name="remark_Others">
+
+        <br><br>
+
+        <br><br>
+
+
+        <label for="">OVERALL REMARKS</label>
+        <input type="text" name="OVERALL REMARKS">
+
+
+        
+        
+        <input type="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby9RpOxuig5yKp-Cuqb5921REQ61swRS5L8h6h39JkCsJGee5upd4wdFhRScy21NBHW/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Page</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+
+        <h1>Library Details</h1>
+        <br><br>
+        <label for="">Audit Team</label>
+    <input type="text" id="Academic" name="Audit Team" placeholder="Academic"><br>
+    <br>
+    <label for="">Place Of Audit</label>
+    <input type="text" id="Auditor" name="Place Of Audit" placeholder="Name of the Auditor"><br>
+    <br>
+    <br>
+    <label for="">Unit Team </label>
+                <input type="text" name="Unit Team">
+                <br>
+                <br>
+    <label for="">Date Of Audit</label>
+    <input type="date" name="Date" id="Date" placeholder="Date" ><br><br>
+ 
+
+  <label for="">Block</label>
+  <input type="text" name="Block">
+  <br>
+  <br>
+  <br><br>
+                    <br>
+      <br><br>
+        <label for="">1.Log Register</label>
+        <input type="text" name="Log Registers" value="Log Registers">
+        <br><br>
+        <label for="">Available(Yes/No)</label>
+        <input type="text" name="1.Available(Yes/No)">
+        <br><br>
+
+        <label for="">2.Computer Log Register</label>
+        <input type="text" name="Computer Log Register" value="Computer Log Register">
+        <br><br>
+        <label for="">Available(Yes/No)</label>
+        <input type="text" name="2.Available(Yes/No)">
+        <br><br>
+
+        <label for="">3.Walks ins-ERP</label>
+        <input type="text" name="Walks ins-ERP" value="Walks ins-ERP">
+        <br><br>
+        <label for="">Available(Yes/No)</label>
+        <input type="text" name="3.Available(Yes/No)">
+        <br><br>
+
+
+        
+        <label for="">4.Accession Register</label>
+        <input type="text" name="Accession Register" value="Accession Register">
+        <br><br>
+        <label for="">Lost Books</label>
+        <input type="text" name="1.Firstcolumn">
+        <br><br>
+        <label for="">Available(Yes/No)</label>
+        <input type="text" name="4.Available(Yes/No)">
+        <br><br>
+        <label for="">Remarks</label>
+        <input type="text" name="1.Remarks">
+        <br><br>
+
+        <label for="">5.Invoice files Fine register</label>
+        <input type="text" name="Invoice files Fine register" value="Invoice files Fine register">
+        <br><br>
+        <label for="">Late Fine</label>
+        <input type="text" name="2.FirstColumn">
+        <br><br>
+        <label for="">Available(Yes/No)</label>
+        <input type="text" name="5.Available(Yes/No)">
+        <br><br>
+        <label for="">Remarks</label>
+        <input type="text" name="2.Remarks">
+        <br><br>
+
+        <label for="">6.List of Other files and Registers Maintained</label>
+        <input type="text" name="List of Other files and Registers Maintained" value="List of Other files and Registers Maintained">
+        <br><br>
+        <label for="">Remarks</label>
+        <input type="text" name="3.Remarks">
+        <br><br>
+
+        <input type="submit" name="" id="" value="submit">
+        
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw7Fv-SUCu9JFqPbcZzCzH1FPkdgbTSA6UGwvGAbHq6v2Ydq36xwrVKAYmAsgEKC78e9w/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

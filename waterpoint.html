@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+
+        <Center><H1>WATER POINT</H1></Center>
+
+        
+        <br><br><br><br>
+
+        <label for="">AUDIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="AUDIT TEAM">
+        <br><br>
+        <label for="">PLACE OF AUDIT</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="PLACE OF AUDIT">
+        <br><br>
+        <label for="">UNIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="UNIT TEAM">
+        <br><br>
+        <label for="">DATE</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="DATE">
+        <br><br>
+        <label for="">BLOCK</label>
+
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="BLOCK">
+        <br><br>
+        
+<hr>
+<br>
+        
+
+
+        
+        <label for="">Tap</label>
+        <input type="text" name="Tap">
+        <input type="text" name="remark_Tap">
+
+        <br><br>
+
+        <label for="">Cooler</label>
+        <input type="text" name="Cooler">
+        <input type="text" name="remark_Cooler">
+
+        <br><br>
+
+        <label for="">Others</label>
+        <input type="text" name="Others">
+        <input type="text" name="remark_Others">
+
+        <br><br>
+
+        <label for="">Others</label>
+        <input type="text" name="Others">
+        <input type="text" name="remark_Others">
+
+        <br><br>
+
+
+
+
+        <input type="submit">
+    </form>
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwUtdjcTexh6pRC5d2nDI35-pAToGp9uvIau3qL87quiHDtusOI4BOepq0hTG6qLPeE1g/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const success=document.getElementById('success')
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+              document.write("<center><h1>You have successfully registered</h1></center>");
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+</script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>corridor
+
+    </title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <Center><H1>CORRIDOR</H1></Center>
+
+        
+        <br><br><br><br>
+
+        <label for="">AUDIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="AUDIT TEAM">
+        <br><br>
+        <label for="">PLACE OF AUDIT</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="PLACE OF AUDIT">
+        <br><br>
+        <label for="">UNIT TEAM</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="UNIT TEAM">
+        <br><br>
+        <label for="">DATE</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="DATE">
+        <br><br>
+        <label for="">BLOCK</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="BLOCK">
+        <br><br>
+        
+<hr>
+<br>
+        
+
+
+        
+        <label for="">Fire Extinguishers</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+
+        <input type="text" name="Fire Extinguishers">
+        <input type="text" name="remark_Fire Extinguishers">
+
+        <br><br>
+
+        <label for="">Notice Board</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="Notice Board">
+        <input type="text" name="remark_Notice Board">
+
+        <br><br>
+
+        <label for="">Corridor Lights</label>
+        &nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        <input type="text" name="Corridor Lights">
+        <input type="text" name="remark_Corridor Lights">
+
+        <br><br>
+        <label for="">Fans</label>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;
+
+        <input type="text" name="Fans">
+        <input type="text" name="remark_Fans">
+        <br><br><br>
+
+        <label for="">Overall Remarks</label>
+        <input type="text" name="Overall Remarks">
+
+        <br><br>
+
+
+        <br><br>
+
+        <input type="submit">
+    </form>
+    </body>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbychvRiYRN6AF5q6ocKzXLLPIE79q9iqFycOaFy56gR5pK6LgxZf6sTrR4_vmaqdrOXrQ/exec'
+          const form = document.forms['submit-to-google-sheet']
+          const success=document.getElementById('success')
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => {
+                  document.write("<center><h1>You have successfully registered</h1></center>");
+              })
+              .catch(error => console.error('Error!', error.message))
+          })
+    </script>
+    </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrician</title>
+    <style>
+      label{
+        text-align: left;
+      }
+      .center{
+        text-align: center;
+      }
+    </style>
+</head>
+<body>
+  <br>
+  <h1>Patrician College Of Arts And Science</h1>
+  <br>
+  <h2>Administrative Audit/Stock Audit.</h2>
+   <div style="background:none;border:2px solid gray;border-radius: 20px;width: 500px;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;">
+   <form name="submit-to-google-sheet">
+    <label for="">Academic Year</label>
+    <input type="text" id="Academic" name="Academic" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;"
+    /><br>
+    <br>
+    <label for="">Name of the Auditor</label>
+    <input type="text" id="Auditor" name="Auditor" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;"><br>
+    <br>
+    <br>
+    <label for="">Date Of Audit</label>
+    <input type="date" name="Date" id="Date" placeholder="Date" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: center;font-size:0.9em ;width: 50%;"><br><br>
+    <br>
+
+  <label for="">Block</label>
+  <input type="text" name="Block">
+  <br>
+  <br>
+  <label for="">Facilities</label>
+                <select name="Facilities" id="" onchange="location = this.value;">
+                    <option value="">Select</option>
+                    <option name="" value="Viceprincipal.html">Academic Director/Principal/Vice Principal-Stock Audit</option>
+                    <option name="" value="academicdetails.html">Academic Directors Office-Administrative Audit</option>
+                    <option name="" value="auditorium.html">Auditorium-Stock Audit</option>
+                    <option name="" value="boardroomlabstock.html">Board Room-Audit Stock</option>
+                    <option name="" value="classroom.html">Class Room-Stock Audit</option>
+                    <option name="" value="computerlab.html">Computer/Commerce/Language/Multimedia Lab Lab-Stock Audit</option>
+                    <option name="" value="conferencehall.html">Conference Hall/Flinton Parkinson-Stock Audit</option>
+                    
+                    <option name="" value="corridor.html">Corridor-Stock Audit</option>
+                    <option name="" value="examoffice.html">Exam Office-Administrative Audit</option>
+                    <option name="" value="financeoffice.html">Finance office-Administrative Audit</option>
+                    <option name="" value="IQAC.html">IQAC</option>
+                    
+                    <option name="" value="library.html">Library-Administrative Audi</option>
+                    <option name="" value="lift.html">Lift-Stock Audit</option>
+                    <option name="" value="maintenance.html">Maintenance Team-Administrative Audit</option>
+                    <option name="" value="principaloffice.html">Principal Office-Administrative Audit</option>
+                    <option name="" value="pyschologylab.html">Physcology Lab-Stock Audit</option>
+                    <option name="" value="restroom.html">Restroom-Stock Audit</option>
+                    <option name="" value="solarpanel.html">Solar Panel-Stock Audit</option>
+                    <option name="" value="sports.html">Sports-Administrative Audit</option>
+                    <option name="" value="staffroom.html">Staff Room-Stock Audit</option>
+                    <option name="" value="technicalteam.html">Technical Team-Administrative Audit</option>
+                    
+                    <option name="" value="waterpoint.html">Water Point-Stock Audit</option>
+                </select>     
+                <br>
+                <br>
+                <label for="">Unit Team </label>
+                <input type="text" name="Unit Team">
+                <br><br>
+              <input class="center" type="submit" value="submit">
+   </form> <br>
+ </div>
+  <style type="text/css">
+    input[type=text]:hover{
+      border-bottom:2px solid black;
+    }
+    input[type=number]:hover{
+      border-bottom:2px solid black;
+    }
+  </style> 
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwGKmEa496Tq950R5PO5KjVilnG7PbBV-ox6LhxkmnYrbVUygjxyBN_9d9utYeKDFiM/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const success=document.getElementById('success')
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          document.write("<center><h1>You have successfully registered</h1></center>");
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+  </script>
+</html>
